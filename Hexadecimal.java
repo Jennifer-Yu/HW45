@@ -1,9 +1,9 @@
 /*
-Team Garfinkel: Emma Vukelj, Jennifer Yu
-HW44: Hexadecimal
+Jennifer Yu
+HW45 -- Come Together
 APCS1 pd9
-2015-12-08
- */
+2015-12-09
+*/
 
 public class Hexadecimal implements Comparable {
 

@@ -1,8 +1,8 @@
 /*
 Jennifer Yu
-HW43 -- This or That, Revised
+HW45 -- Come Together
 APCS1 pd9
-2015-12-08
+2015-12-09
 */
 
 public class Binary implements Comparable {

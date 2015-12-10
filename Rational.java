@@ -1,7 +1,9 @@
-//Team  Diligent Swagga OG and Jennie J Slice a.k.a. Smug Hood-- Olivia Gallager and Jennifer Yu
-//APCS1 pd9
-//HW41 -- In America, the Driver Sits on the Left
-//2015-12-04
+/*
+Jennifer Yu
+HW45 -- Come Together
+APCS1 pd9
+2015-12-09
+*/
 
 public class Rational implements Comparable {
 

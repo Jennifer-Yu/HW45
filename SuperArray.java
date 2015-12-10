@@ -1,8 +1,8 @@
 /*
-  Team StealYoManz -- Olivia Gallager and Jennifer Yu (Dilligent Swagga OG and Jennie J Slice a.k.a. Smug Hood are back at it yo)
-  APCS1 pd9
-  HW42 -- Array of Titanium
-  2015-12-06
+Jennifer Yu
+HW45 -- Come Together
+APCS1 pd9
+2015-12-09
 */
 //let me ponder that question ^^ ?
 
