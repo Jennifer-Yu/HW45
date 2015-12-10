@@ -5,7 +5,7 @@ APCS1 pd9
 2015-12-08
 */
 
-public class Binary {
+public class Binary implements Comparable {
     //To search and replace: C-s M-% y:replace, n:skip
 
     /*=====================================
@@ -138,28 +138,79 @@ public class Binary {
       post: Returns 0 if this Object is equal to the input Object,
       negative integer if this<input, positive integer otherwise
     =============================================*/
+    public int getdn() {
+        return this._decNum;
+    }
+
     public int compareTo( Object other ) {
-	if (!(other instanceof Binary)) //catches an incorrect input error
-	    throw new ClassCastException ("\ncompareTo() input not a Binary");
-	int othDec = ((Binary)other)._decNum;
-	//initialize an int as the decNum of other
-	//other is typecasted for the same reason as in the equals method
-	if (_decNum > othDec) {
+            /*
+        if (((Binary)other).equals(null))
+            throw new NullPointerException ("\ncompareTo() input is null");
+        if (((Hexadecimal)other).equals(null))
+            throw new NullPointerException ("\ncompareTo() input is null");
+        if (((Rational)other).equals(null))
+            throw new NullPointerException ("\ncompareTo() input is null");
+            */
+	if (other instanceof Binary) {
+	    int othDec = ((Binary)other).getdn();
+	    //initialize an int as the decNum of other
+	    //other is typecasted for the same reason as in the equals method
+        if (_decNum > othDec) {
         //if the decNum of this is greater than other's decNum
-	    return 1;
-	    //return a positive int
-	} else if (_decNum == othDec) {
-	  //if it is equal
-	    return 0;
-	    //return 0
-	} return -1;
-	//else return a negative int
+            return 1;
+            //return a positive int
+        } else if (_decNum == othDec) {
+        //if it is equal
+            return 0;
+            //return 0
+        } return -1;
+        //else return a negative int		    
+	}
+	
+	else if (other instanceof Hexadecimal) {
+	    int othDec = ((Hexadecimal)other).getdn();
+	    //initialize an int as the decNum of other
+	    //other is typecasted for the same reason as in the equals method
+        if (_decNum > othDec) {
+        //if the decNum of this is greater than other's decNum
+            return 1;
+            //return a positive int
+        } else if (_decNum == othDec) {
+        //if it is equal
+            return 0;
+            //return 0
+        } return -1;
+        //else return a negative int		    
+	}
+	
+	else if (other instanceof Rational) {
+	    double othDec = ((Rational)other).getfv();
+	    //initialize an int as the decNum of other
+	    //other is typecasted for the same reason as in the equals method
+        if (_decNum > othDec) {
+        //if the decNum of this is greater than other's decNum
+            return 1;
+            //return a positive int
+        } else if (_decNum == othDec) {
+        //if it is equal
+            return 0;
+            //return 0
+        } return -1;
+        //else return a negative int		    
+	}
+	
+	else {
+            throw new ClassCastException ("\ncompareTo() input not valid"); //catches an incorrect input error     
+	}
     }
 
 
     //main method for testing
     public static void main( String[] args ) {
 
+        Binary b1 = new Binary(5);
+        b1.compareTo(null);
+/*
 
 	System.out.println();
 	System.out.println( "Testing ..." );
@@ -168,7 +219,7 @@ public class Binary {
 	Binary b2 = new Binary(5);
 	Binary b3 = b1;
 	Binary b4 = new Binary(7);
-
+	
 	System.out.println( b1 );
 	System.out.println( b2 );
 	System.out.println( b3 );       
@@ -190,6 +241,7 @@ public class Binary {
 	System.out.println( b1.compareTo(b3) ); //should be 0
 	System.out.println( b1.compareTo(b4) ); //should be neg
 	System.out.println( b4.compareTo(b1) ); //should be pos
+*/
 	/*=========================================
 	  =========================================*/
     }//end main()
